@@ -1,0 +1,125 @@
+{
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "prettier"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+        "@typescript-eslint",
+        "prettier",
+        "unused-imports"
+    ],
+    "env": {
+        "node": true,
+        "es6": true,
+        "jest": true,
+        "browser": true
+    },
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "project": [
+            "tsconfig.json",
+            "tsconfig.build.json"
+        ]
+    },
+    "rules": {
+        "@typescript-eslint/no-floating-promises": "error",
+        "arrow-parens": [
+            "error",
+            "always"
+        ],
+        // Handled by TSC
+        "no-console": "warn",
+        "@typescript-eslint/ban-types": "off",
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+        "@typescript-eslint/no-unused-vars": [
+            "error",
+            {
+                "vars": "all",
+                "varsIgnorePattern": "^_",
+                "args": "after-used",
+                "argsIgnorePattern": "^_"
+            }
+        ],
+        "unused-imports/no-unused-imports": "error",
+        // Handled by TSC
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/explicit-member-accessibility": [
+            "error",
+            {
+                "accessibility": "explicit",
+                "overrides": {
+                    "accessors": "explicit",
+                    "constructors": "no-public",
+                    "methods": "explicit",
+                    "properties": "off",
+                    "parameterProperties": "explicit"
+                }
+            }
+        ],
+        // "@typescript-eslint/no-parameter-properties": "error",
+        //         "@typescript-eslint/no-explicit-any": "error",
+        // "@typescript-eslint/no-non-null-assertion": "error",
+        // "@typescript-eslint/no-useless-constructor": "error",
+        "@typescript-eslint/array-type": [
+            "error",
+            {
+                "default": "array-simple",
+                "readonly": "array-simple"
+            }
+        ],
+        "no-unused-expressions": [
+            "error",
+            {
+                "allowShortCircuit": true,
+                "allowTernary": true
+            }
+        ],
+        // Checks effect dependencies
+        "object-shorthand": "error",
+        "dot-notation": "error",
+        "no-caller": "error",
+        "no-useless-concat": "error",
+        "radix": "error",
+        "yoda": "error",
+        "prefer-arrow-callback": "error",
+        "prefer-rest-params": "error",
+        "no-var": "error",
+        "prefer-const": "error",
+        "prefer-spread": "error",
+        "no-shadow": "off",
+        "@typescript-eslint/no-shadow": "error",
+        "prefer-template": "error",
+        "prefer-destructuring": [
+            "error",
+            {
+                "array": false,
+                "object": true
+            }
+        ],
+        "default-case": "error"
+    },
+    "overrides": [
+        {
+            "files": [
+                "**/*.test.ts",
+                "**/*.test.tsx"
+            ],
+            "rules": {
+                "@typescript-eslint/no-non-null-assertion": "off"
+            }
+        },
+        {
+            "files": [
+                "./webpack/*.config.js",
+                "./public/*.js",
+                "./src/server/**/*.js"
+            ],
+            "rules": {
+                "@typescript-eslint/no-var-requires": "off"
+            }
+        }
+    ]
+}
