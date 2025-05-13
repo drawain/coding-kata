@@ -11,3 +11,29 @@ There is a large pile of socks that must be paired by color. Write a function wh
   
 Example: arr = [1,2,1,1,3,2,2]
  
+
+# SQL Task
+Write an SQL query that counts how many people we have for each language, and only includes languages with at least two entries.
+https://sqlplayground.app/sandbox/6822eeb4625efef3449ada7c
+
+```
+ -- 1) Create table
+CREATE TABLE person_languages (
+  id       SERIAL      PRIMARY KEY,
+  name     VARCHAR(50) NOT NULL,
+  language VARCHAR(50) NOT NULL
+);
+
+-- 2) Insert sample data
+INSERT INTO person_languages (name, language) VALUES
+  ('Alice',   'English'),
+  ('Bob',     'French'),
+  ('Charlie', 'English'),
+  ('David',   'German'),
+  ('Eve',     'French'),
+  ('Frank',   'Spanish'),
+  ('Grace',   'German'),
+  ('Heidi',   'English'),
+  ('Ivan',    'Russian'),
+  ('Judy',    'French');
+  ```
