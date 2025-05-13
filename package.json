@@ -4,7 +4,10 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint src",
-    "test": "jest"
+    "test": "jest",
+    "socks": "ts-node src/socks.ts",
+    "fizzbuzz": "ts-node src/fizzbuzz.ts",
+    "errors": "ts-node src/errors.ts"
   },
   "author": "",
   "license": "ISC",
